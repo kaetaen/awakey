@@ -14,8 +14,11 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
+
 const Route = use('Route')
 
-Route.get('/', () => {
-  return { greeting: 'Hello world in JSON' }
-})
+Route.post('/sessions', 'SessionController.create')
+Route.post('/users', 'UserController.create')
+Route.resource('dreamnotes', 'DreamNoteController')
+  .apiOnly()
+  .middleware('auth')
