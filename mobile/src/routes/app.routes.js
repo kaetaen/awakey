@@ -1,14 +1,14 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Login from '../screens/Login'
+import Dashboard from '../screens/Dashboard'
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
       <Tab.Navigator>
-        <Tab.Screen name="Login" component={Login} />
+        <Tab.Screen name="Inicio" component={Dashboard} />
       </Tab.Navigator>
   );
 }

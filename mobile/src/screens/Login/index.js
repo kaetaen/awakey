@@ -6,7 +6,7 @@ import {
 function Login () {
   return (
     <View>
-      <Text> Olá mundo </Text>
+      <Text> Olá mundo  </Text>
     </View>
   )
 }
