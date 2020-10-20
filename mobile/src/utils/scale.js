@@ -1,4 +1,6 @@
-function vs (type, size=100) {
+import { Dimensions } from 'react-native'
+
+function viewportSize (type, size=100) {
   /*
    * This function calculates the height and width of the
    * viewport (simulating the behavior of the units vh and vw)
@@ -22,4 +24,4 @@ function vs (type, size=100) {
   console.warn('This type doesn\'t exists')
 }
 
-export default vs
+export default viewportSize
