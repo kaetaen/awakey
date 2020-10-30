@@ -11,13 +11,13 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     async function loadStorageData () {
-      const storageUser = await AsyncStorage.getItem('@RNAuth:user')
-      const storageToken = await AsyncStorage.getItem('@RNAuth:token')
+      const storagedUser = await AsyncStorage.getItem('@RNAuth:user')
+      const storagedToken = await AsyncStorage.getItem('@RNAuth:token')
 
-      if (storageUser && storageToken) {
-        setUser(JSON.parse(storageUser))
+      if (storagedUser && storagedToken) {
+        setUser(JSON.parse(storagedUser))
         setLoading(false)
-      } else if (!storageUser && !storageToken) {
+      } else if (!storagedUser && !storagedToken) {
         setLoading(false)
       }
     }
@@ -26,11 +26,11 @@ export const AuthProvider = ({ children }) => {
   }, [])
 
   async function signIn () {
-    const response = await auth.Signin()
+    const response = await auth.signIn()
     setUser(response.user)
 
     await AsyncStorage.setItem('@RNAuth:user', JSON.stringify(response.user))
-    await AsyncStorage.setItem('@RNAuth:user',  response.token)
+    await AsyncStorage.setItem('@RNAuth:token',  response.token)
   }
   
   function signOut () {

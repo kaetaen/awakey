@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet} from 'react-native'
 
 const style = StyleSheet.create({
   telaInicial: {
@@ -16,9 +16,10 @@ const style = StyleSheet.create({
 })
 
 function Dashboard () {
+
   return (
     <View style={style.telaInicial}>
-      <Text style={style.texto}> Meu Dashboard</Text>
+      <Text style={style.texto}> Meu Dashboard </Text>
     </View>
   )
 }
