@@ -1,5 +1,12 @@
-import React from 'react'
-import { View, Text, StyleSheet} from 'react-native'
+import React, { useContext } from 'react'
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button 
+} from 'react-native'
+
+import AuthContext from '../../contexts/auth' 
 
 const style = StyleSheet.create({
   telaInicial: {
@@ -17,9 +24,15 @@ const style = StyleSheet.create({
 
 function Dashboard () {
 
+  const authContext = useContext(AuthContext)
+
   return (
     <View style={style.telaInicial}>
       <Text style={style.texto}> Meu Dashboard </Text>
+      <Button
+        title="Logout"
+        onPress={authContext.signOut}
+      />
     </View>
   )
 }

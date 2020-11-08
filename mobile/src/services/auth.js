@@ -1,14 +1,16 @@
-export function signIn(){
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve({
-				token: 'ALeKk02G0qQyeFUIPxUx1xiaaCNsi_e2Yew',
-					user: {
-						name: 'Rubens dos Santos',
-						email: 'kaetaen@tutanota.com'
-		      }
-      	})
-    }, 2000);
-  })
+import axios from 'axios'
+
+const api = axios.create(({
+	baseURL: 'http://10.0.0.1:3333'
+}))
+
+export async function signIn () {
+	res = await api.post('/sessions', {
+		email: 'kairos@gmail.com',
+		password: '123456'
+	})
+	console.warn('ok')
+
+	return res
 }
 
